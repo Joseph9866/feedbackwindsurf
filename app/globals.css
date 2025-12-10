@@ -1,0 +1,188 @@
+:root {
+  --windsurf-navy: #0b1f3a;
+  --windsurf-blue: #1a73e8;
+  --windsurf-cyan: #41e0ff;
+  --windsurf-slate: #1f2937;
+  --windsurf-muted: #94a3b8;
+  --windsurf-bg: #f0f4ff;
+  --windsurf-card: #ffffff;
+  --windsurf-border: rgba(13, 40, 73, 0.12);
+  --radius: 12px;
+  --shadow-soft: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--windsurf-bg);
+  color: var(--windsurf-slate);
+  min-height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.card {
+  background: var(--windsurf-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--windsurf-border);
+  box-shadow: var(--shadow-soft);
+  padding: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 4px 12px;
+  text-transform: capitalize;
+}
+
+.badge.info {
+  color: #0f172a;
+  background: rgba(65, 224, 255, 0.22);
+}
+
+.badge.success {
+  color: #0f172a;
+  background: rgba(16, 185, 129, 0.25);
+}
+
+.badge.warning {
+  color: #0f172a;
+  background: rgba(251, 191, 36, 0.3);
+}
+
+.badge.danger {
+  color: white;
+  background: #ef4444;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--windsurf-border);
+  background: rgba(255, 255, 255, 0.95);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--windsurf-blue);
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+  outline: none;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--windsurf-blue), var(--windsurf-cyan));
+  color: #0b1f3a;
+}
+
+.btn-secondary {
+  background: rgba(11, 31, 58, 0.08);
+  color: var(--windsurf-navy);
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--windsurf-border);
+}
+
+.table th {
+  color: var(--windsurf-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-error {
+  color: #ef4444;
+  font-size: 0.85rem;
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
